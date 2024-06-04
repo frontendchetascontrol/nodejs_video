@@ -1,7 +1,11 @@
+const { getURL } = require("../services/aws");
 
-const getHello = (req, res) => {
+const getHello = async (req, res) => {
+    const url = await getURL();
+
     const hello =  {
-        msg: 'hello'
+        msg: 'hello',
+        url
     };
     res.json(hello);
 };
